@@ -5,26 +5,29 @@
 //  Created by Austin Zheng on 6/3/14.
 //  Copyright (c) 2014 Austin Zheng. Released under the terms of the MIT license.
 //
-
 import UIKit
+
 
 /// A view controller representing the swift-2048 game. It serves mostly to tie a GameModel and a GameboardView
 /// together. Data flow works as follows: user input reaches the view controller and is forwarded to the model. Move
 /// orders calculated by the model are returned to the view controller and forwarded to the gameboard view, which
 /// performs any animations to update its state.
+
+
 class NumberTileGameViewController : UIViewController, GameModelProtocol {
   // How many tiles in both directions the gameboard contains
   var dimension: Int
   // The value of the winning tile
   var threshold: Int
-
   var board: GameboardView?
   var model: GameModel?
+   var ad : UIView!
+     var bannerAd : ISBannerView!
 
   var scoreView: ScoreViewProtocol?
 
   // Width of the gameboard
-  let boardWidth: CGFloat = 230.0
+  let boardWidth: CGFloat = UIScreen.main.bounds.width - 30
   // How much padding to place between the tiles
   let thinPadding: CGFloat = 3.0
   let thickPadding: CGFloat = 6.0
@@ -76,6 +79,30 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     super.viewDidLoad()
     setupGame()
   }
+    
+    func finishedGame(_ score : Int) {
+        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
+        let viewModel = RetryViewModel(score: score)
+        let controller = storyboard.instantiateViewController(withIdentifier: "RetryViewController") as! RetryViewController
+        controller.model = viewModel
+        
+        controller.onRetry = { [weak self] in
+            self?.reset()
+        }
+        
+        controller.onHideAd = { [weak self] in
+            self?.ad.isHidden = true
+        }
+        
+        controller.onShowAd = { [weak self] in
+            self?.ad.isHidden = false
+        }
+        
+        let navigation = UINavigationController(rootViewController: controller)
+        navigation.isNavigationBarHidden = true
+        navigation.modalPresentationStyle = .overFullScreen
+        self.navigationController?.present(navigation, animated: true, completion: nil)
+    }
 
   func reset() {
     assert(board != nil && model != nil)
@@ -85,6 +112,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     m.reset()
     m.insertTileAtRandomLocation(withValue: 2)
     m.insertTileAtRandomLocation(withValue: 2)
+    ad.isHidden = false
   }
 
   func setupGame() {
@@ -143,14 +171,35 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     f.origin.x = xPositionToCenterView(gameboard)
     f.origin.y = yPositionForViewAtPosition(1, views: views)
     gameboard.frame = f
-
-
+    
+    let imageView = UIImageView(image: UIImage(named: "bg"))
+    imageView.contentMode = .scaleAspectFill
+    imageView.alpha = 0.5
+    imageView.frame = UIScreen.main.bounds
+    view.addSubview(imageView)
     // Add to game state
     view.addSubview(gameboard)
     board = gameboard
     view.addSubview(scoreView)
     self.scoreView = scoreView
-
+    
+    
+    
+    if ((self.bannerAd) != nil) {
+        DispatchQueue.main.async {
+            IronSource.destroyBanner(self.bannerAd)
+            self.bannerAd = nil
+        }
+    }
+    
+//    IronSource.loadBanner(with: self, size: ISBannerSize_SMART)
+    IronSource.loadBanner(with: self, size: ISBannerSize(width: Int(UIScreen.main.bounds.width), andHeight: 50))
+    IronSource.setBannerDelegate(self)
+    ad = UIView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - 50, width: UIScreen.main.bounds.width, height: 50))
+    ad.translatesAutoresizingMaskIntoConstraints = false
+    ad.backgroundColor = .white
+    view.addSubview(ad)
+    
     assert(model != nil)
     let m = model!
     m.insertTileAtRandomLocation(withValue: 2)
@@ -163,13 +212,9 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     let m = model!
     let (userWon, _) = m.userHasWon()
     if userWon {
-      // TODO: alert delegate we won
-      let alertView = UIAlertView()
-      alertView.title = "Victory"
-      alertView.message = "You won!"
-      alertView.addButton(withTitle: "Cancel")
-      alertView.show()
-      // TODO: At this point we should stall the game until the user taps 'New Game' (which hasn't been implemented yet)
+        if let model = model {
+            finishedGame(model.score)
+        }
       return
     }
 
@@ -179,13 +224,9 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
 
     // At this point, the user may lose
     if m.userHasLost() {
-      // TODO: alert delegate we lost
-      NSLog("You lost...")
-      let alertView = UIAlertView()
-      alertView.title = "Defeat"
-      alertView.message = "You lost..."
-      alertView.addButton(withTitle: "Cancel")
-      alertView.show()
+        if let model = model {
+            finishedGame(model.score)
+        }
     }
   }
 
@@ -265,3 +306,33 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     b.insertTile(at: location, value: value)
   }
 }
+
+extension NumberTileGameViewController : ISBannerDelegate {
+    func bannerDidLoad(_ bannerView: ISBannerView!) {
+        self.bannerAd = bannerView
+        self.ad.addSubview(self.bannerAd)
+    }
+    
+    func bannerDidFailToLoadWithError(_ error: Error!) {
+        
+    }
+    
+    func didClickBanner() {
+        
+    }
+    
+    func bannerWillPresentScreen() {
+        
+    }
+    
+    func bannerDidDismissScreen() {
+        
+    }
+    
+    func bannerWillLeaveApplication() {
+        
+    }
+    
+    
+}
+

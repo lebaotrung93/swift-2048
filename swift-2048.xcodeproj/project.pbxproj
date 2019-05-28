@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03851AFA4678BD2270AF0CE7 /* Pods_swift_2048Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89617D7093F23049C318F2E0 /* Pods_swift_2048Tests.framework */; };
 		1AC563E3193DCE6000402286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC563E2193DCE6000402286 /* AppDelegate.swift */; };
 		1AC563E5193DCE6000402286 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC563E4193DCE6000402286 /* ViewController.swift */; };
 		1AC563E8193DCE6000402286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC563E6193DCE6000402286 /* Main.storyboard */; };
@@ -20,6 +21,11 @@
 		1AEF46D01BAE736400119D81 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AEF46CF1BAE736400119D81 /* Launch Screen.storyboard */; };
 		1AF8F0B619403AA400A7049E /* AccessoryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8F0B519403AA400A7049E /* AccessoryViews.swift */; };
 		1AF8F0B81941841000A7049E /* AuxiliaryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8F0B71941841000A7049E /* AuxiliaryModels.swift */; };
+		6EEB715D4DCD506FCCBA3585 /* Pods_swift_2048.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C1AEA3D71FE0E545BD018B /* Pods_swift_2048.framework */; };
+		84F98C8E222644E50083394C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F98C8D222644E50083394C /* UIViewExtensions.swift */; };
+		84F98C90222645420083394C /* RetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F98C8F222645420083394C /* RetryViewController.swift */; };
+		84F98C9222268A670083394C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84F98C9122268A670083394C /* GoogleService-Info.plist */; };
+		84F98C952226C7D40083394C /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F98C942226C7D40083394C /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +45,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		843705DC222EBFCC00B67F1C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		17C1AEA3D71FE0E545BD018B /* Pods_swift_2048.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_2048.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC563DD193DCE6000402286 /* swift-2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-2048.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC563E1193DCE6000402286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC563E2193DCE6000402286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +77,16 @@
 		1AEF46CF1BAE736400119D81 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1AF8F0B519403AA400A7049E /* AccessoryViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessoryViews.swift; path = Views/AccessoryViews.swift; sourceTree = "<group>"; };
 		1AF8F0B71941841000A7049E /* AuxiliaryModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuxiliaryModels.swift; path = Models/AuxiliaryModels.swift; sourceTree = "<group>"; };
+		65CE327FEBB9025A91FE7287 /* Pods-swift-2048.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-2048.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-2048/Pods-swift-2048.debug.xcconfig"; sourceTree = "<group>"; };
+		84BF3BBC2234CE580034EB77 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		84F98C8D222644E50083394C /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		84F98C8F222645420083394C /* RetryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryViewController.swift; sourceTree = "<group>"; };
+		84F98C9122268A670083394C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84F98C942226C7D40083394C /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		89617D7093F23049C318F2E0 /* Pods_swift_2048Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_2048Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20CD204A3756F6A5E8C285C /* Pods-swift-2048.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-2048.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-2048/Pods-swift-2048.release.xcconfig"; sourceTree = "<group>"; };
+		D977EF7B0D5D9C7CBB5E7258 /* Pods-swift-2048Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-2048Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-2048Tests/Pods-swift-2048Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FF5757077AF5B89D3039511C /* Pods-swift-2048Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-2048Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-2048Tests/Pods-swift-2048Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EEB715D4DCD506FCCBA3585 /* Pods_swift_2048.framework in Frameworks */,
+				84F98C952226C7D40083394C /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03851AFA4678BD2270AF0CE7 /* Pods_swift_2048Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,9 +113,12 @@
 		1AC563D4193DCE6000402286 = {
 			isa = PBXGroup;
 			children = (
+				84F98C9122268A670083394C /* GoogleService-Info.plist */,
 				1AC563DF193DCE6000402286 /* swift-2048 */,
 				1AC563F2193DCE6000402286 /* swift-2048Tests */,
 				1AC563DE193DCE6000402286 /* Products */,
+				5A880BF59C5998EEA9E01069 /* Pods */,
+				FA535F92F2FEE5CC6A2979D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +134,7 @@
 		1AC563DF193DCE6000402286 /* swift-2048 */ = {
 			isa = PBXGroup;
 			children = (
+				84F98C8D222644E50083394C /* UIViewExtensions.swift */,
 				1AEF46CF1BAE736400119D81 /* Launch Screen.storyboard */,
 				1AC563E2193DCE6000402286 /* AppDelegate.swift */,
 				1AC563E4193DCE6000402286 /* ViewController.swift */,
@@ -108,6 +145,8 @@
 				1AE339B0193DCEAE0081FFA4 /* Views */,
 				1AE8BEF3193EF260007592BA /* NumberTileGame.swift */,
 				1AE8BEF1193EF1C7007592BA /* AppearanceProvider.swift */,
+				84F98C8F222645420083394C /* RetryViewController.swift */,
+				84BF3BBC2234CE580034EB77 /* Header.h */,
 			);
 			path = "swift-2048";
 			sourceTree = "<group>";
@@ -156,6 +195,27 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		5A880BF59C5998EEA9E01069 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65CE327FEBB9025A91FE7287 /* Pods-swift-2048.debug.xcconfig */,
+				D20CD204A3756F6A5E8C285C /* Pods-swift-2048.release.xcconfig */,
+				FF5757077AF5B89D3039511C /* Pods-swift-2048Tests.debug.xcconfig */,
+				D977EF7B0D5D9C7CBB5E7258 /* Pods-swift-2048Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA535F92F2FEE5CC6A2979D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84F98C942226C7D40083394C /* GameKit.framework */,
+				17C1AEA3D71FE0E545BD018B /* Pods_swift_2048.framework */,
+				89617D7093F23049C318F2E0 /* Pods_swift_2048Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,9 +223,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AC563F9193DCE6000402286 /* Build configuration list for PBXNativeTarget "swift-2048" */;
 			buildPhases = (
+				704A8088474619728F9E946B /* [CP] Check Pods Manifest.lock */,
 				1AC563D9193DCE6000402286 /* Sources */,
 				1AC563DA193DCE6000402286 /* Frameworks */,
 				1AC563DB193DCE6000402286 /* Resources */,
+				B586B72471A14E5974171CF1 /* [CP] Embed Pods Frameworks */,
+				84F98C9322268BFD0083394C /* ShellScript */,
+				843705DC222EBFCC00B67F1C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +244,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AC563FC193DCE6000402286 /* Build configuration list for PBXNativeTarget "swift-2048Tests" */;
 			buildPhases = (
+				84B315710D7E138B3AEFA3F1 /* [CP] Check Pods Manifest.lock */,
 				1AC563EB193DCE6000402286 /* Sources */,
 				1AC563EC193DCE6000402286 /* Frameworks */,
 				1AC563ED193DCE6000402286 /* Resources */,
@@ -207,7 +272,13 @@
 				TargetAttributes = {
 					1AC563DC193DCE6000402286 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = B39Y4A46Z2;
 						LastSwiftMigration = 0900;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					1AC563EE193DCE6000402286 = {
 						CreatedOnToolsVersion = 6.0;
@@ -241,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AEF46D01BAE736400119D81 /* Launch Screen.storyboard in Resources */,
+				84F98C9222268A670083394C /* GoogleService-Info.plist in Resources */,
 				1AC563E8193DCE6000402286 /* Main.storyboard in Resources */,
 				1AC563EA193DCE6000402286 /* Images.xcassets in Resources */,
 			);
@@ -255,6 +327,94 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		704A8088474619728F9E946B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swift-2048-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84B315710D7E138B3AEFA3F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swift-2048Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84F98C9322268BFD0083394C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" f7840727a5e2f108b6cf66923eb2580652065848 d088c984940fd0e9bae5ff19dd737b1c1618476d5d55e245db1e181ee75a0c98\n";
+		};
+		B586B72471A14E5974171CF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-swift-2048/Pods-swift-2048-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swift-2048/Pods-swift-2048-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1AC563D9193DCE6000402286 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -266,6 +426,8 @@
 				1AC563E5193DCE6000402286 /* ViewController.swift in Sources */,
 				1AE8BEF2193EF1C7007592BA /* AppearanceProvider.swift in Sources */,
 				1AC563E3193DCE6000402286 /* AppDelegate.swift in Sources */,
+				84F98C8E222644E50083394C /* UIViewExtensions.swift in Sources */,
+				84F98C90222645420083394C /* RetryViewController.swift in Sources */,
 				1AE339B2193DCF110081FFA4 /* GameModel.swift in Sources */,
 				1AF8F0B81941841000A7049E /* AuxiliaryModels.swift in Sources */,
 				1AE8BEF0193EEE24007592BA /* GameboardView.swift in Sources */,
@@ -408,34 +570,51 @@
 		};
 		1AC563FA193DCE6000402286 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65CE327FEBB9025A91FE7287 /* Pods-swift-2048.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B39Y4A46Z2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "swift-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "f3nghuang.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = luck.com.2048;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/swift-2048/Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		1AC563FB193DCE6000402286 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D20CD204A3756F6A5E8C285C /* Pods-swift-2048.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B39Y4A46Z2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "swift-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "f3nghuang.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = luck.com.2048;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/swift-2048/Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		1AC563FD193DCE6000402286 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF5757077AF5B89D3039511C /* Pods-swift-2048Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/swift-2048.app/swift-2048";
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -456,6 +635,7 @@
 		};
 		1AC563FE193DCE6000402286 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D977EF7B0D5D9C7CBB5E7258 /* Pods-swift-2048Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/swift-2048.app/swift-2048";
 				FRAMEWORK_SEARCH_PATHS = "";

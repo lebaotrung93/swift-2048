@@ -117,6 +117,7 @@ class GameboardView : UIView {
 
     // Get the tiles
     guard let tile = tiles[fromKey] else {
+        return
       assert(false, "placeholder error")
     }
     let endTile = tiles[toKey]
@@ -172,9 +173,11 @@ class GameboardView : UIView {
     let toKey = IndexPath(row: toRow, section: toCol)
 
     guard let tileA = tiles[fromKeyA] else {
+        return
       assert(false, "placeholder error")
     }
     guard let tileB = tiles[fromKeyB] else {
+        return
       assert(false, "placeholder error")
     }
 

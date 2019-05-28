@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Austin Zheng. Released under the terms of the MIT license.
 //
 
+import Fabric
+import Crashlytics
+import Firebase
 import UIKit
 
 @UIApplicationMain
@@ -14,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    IronSource.initWithAppKey("8b39489d", adUnits: [IS_REWARDED_VIDEO, IS_BANNER])
+    ISIntegrationHelper.validateIntegration()
+
+    FirebaseApp.configure()
+    Fabric.with([Crashlytics.self])
+    
     return true
   }
 
